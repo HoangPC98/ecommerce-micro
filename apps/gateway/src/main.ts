@@ -7,6 +7,9 @@ async function bootstrap() {
   const app = await NestFactory.create(GatewayModule);
   app.useGlobalPipes(new ValidationPipe());
   const configService = app.get(ConfigService);
-  await app.listen(configService.get('GATEWAY_PORT'));
+  const port = configService.get('GATEWAY_PORT')
+  await app.listen(port);
+  console.log('GATEWAY started successfully : ' + port)
+
 }
 bootstrap();

@@ -2,13 +2,13 @@
   "collection": "@nestjs/schematics",
   "sourceRoot": "apps/gateway/src",
   "monorepo": true,
-  "root": "apps/gateway",
+  "root": "",
   "compilerOptions": {
     "webpack": true,
     "tsConfigPath": "apps/gateway/tsconfig.app.json"
   },
   "projects": {
-    "orders": {
+    "@app/orders": {
       "type": "application",
       "root": "apps/orders",
       "entryFile": "main",
@@ -17,7 +17,7 @@
         "tsConfigPath": "apps/orders/tsconfig.app.json"
       }
     },
-    "billing": {
+    "@app/billing": {
       "type": "application",
       "root": "apps/billing",
       "entryFile": "main",
@@ -44,7 +44,7 @@
         "tsConfigPath": "libs/common/tsconfig.lib.json"
       }
     },
-    "gateway": {
+    "@app/gateway": {
       "type": "application",
       "root": "apps/gateway",
       "entryFile": "main",
@@ -53,13 +53,22 @@
         "tsConfigPath": "apps/gateway/tsconfig.app.json"
       }
     },
-    "payment": {
+    "@app/payment": {
       "type": "application",
       "root": "apps/payment",
       "entryFile": "main",
       "sourceRoot": "apps/payment/src",
       "compilerOptions": {
         "tsConfigPath": "apps/payment/tsconfig.app.json"
+      }
+    },
+    "@app/product": {
+      "type": "application",
+      "root": "apps/product",
+      "entryFile": "main",
+      "sourceRoot": "apps/product/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/product/tsconfig.app.json"
       }
     }
   }
